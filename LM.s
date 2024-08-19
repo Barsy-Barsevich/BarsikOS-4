@@ -34,6 +34,8 @@ SYS_USR_MUUTOS:
         MVI         A,$B0
         OUT         TIMER_MODEREG
         LHLD        SYSCELL_QUANT_TIME
+        LXI         D,CLT_Ticks_Per_Ms
+        CALL        REG_MUL16
         MOV         A,L
         OUT         TIMER_COUNTER_2
         MOV         A,H
