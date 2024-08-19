@@ -117,7 +117,7 @@ planner_m1:
         RDEL
         RDEL
         ;lxi         h,SAP_STARTADDR
-        LHLD        SYSCELL_SAP_STARTADDR
+        LXI         SYSCELL_QSAP
         DAD         D           ;HL - указатель на САП
         SHLD        SYSCELL_PROCTORUN ;указатель на САП процесса, который надо запустить
 ;(3) Проверка статуса.
@@ -145,7 +145,7 @@ planner_m1:
         LHLD        SYSCELL_PROCTORUN
         LDHI        SYSPA_STATUS_1
         LDAX        D                       ;A <- ID
-        LHLD        SYSCELL_SAP_STARTADDR   ;HL <- SAP_STARTADDR
+        LXI         SYSCELL_QSAP   ;HL <- SAP_STARTADDR
         LXI         D,ONE_SAP_LEN           ;DE <- 32
 ;(5) Цикл-пробежка по очереди САП
 planner_cycle:
@@ -237,7 +237,7 @@ killer_from_qsap:
         DAD         D
         XCHG
 ;(3) BC <- 'сколько' := SAP_STARTADDR + QSAP_LEN - NEXT_PROC
-        LHLD        SYSCELL_SAP_STARTADDR
+        LXI         SYSCELL_QSAP
         LXI         b,QSAP_LEN
         DAD         B
         MOV         B,D
@@ -354,7 +354,7 @@ TRAP_source_end:
 ; SYStemFS
 ; Функция SYS_QuantTime_Set - установка величины кванта времени
 ; Ввод: (HL)-указатель на структуру аттрибутов процесса
-; Вывод: нет
+; Вывод: SYSCELL_QUANT_TIME - 
 ; Используемые регистры: все
 ; Оценка: длина - , время - 
 SYS_QuantTime_Set:
