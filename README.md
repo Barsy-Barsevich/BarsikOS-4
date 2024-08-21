@@ -1,1 +1,1 @@
-# BarsikOS-4.01α
+# BarsikOS-4.01α :: __Sandu__
