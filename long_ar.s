@@ -43,7 +43,7 @@ ADD32:
 ; Используются регистры: AF,BC,HL. Cохраняется (HL)
 ; Оценка: длина - , время - 
 
-INV32:
+DOP32:
     PUSH    H
     mvi     c,$03   ;задаем количество повторений цикла
     MOV     A,M     ;загрузка байта
@@ -266,22 +266,22 @@ MUL32:
     MOV     B,A
     ANI     $7F
     STAX    D
-    mov     a,b
+    MOV     A,B
     ANI     $80
     XRA     C
     RZ
     LHLD    out
     INX     H
-    ora     m
+    ORA     M
     MOV     M,A
     RET
 
 int32mul_summon:
     LDAX    D
-    mov     b,m
+    MOV     B,M
     PUSH    D
     PUSH    H
-    mov     e,b
+    MOV     E,B
 ;Быстрое умножение: операнды (A) и (E), результат (HL)
     LXI     H,$0000
     MVI     D,$00
@@ -298,11 +298,11 @@ int32mul_1:
     JNZ     cycle   ;зацикливание
     XCHG
     LHLD    out
-    mov     a,e
+    MOV     A,E
     ADD     M
     MOV     M,A
     INX     H
-    mov     a,d
+    MOV     A,D
     ADC     M
     MOV     M,A
     POP     H
