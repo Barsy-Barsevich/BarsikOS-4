@@ -50,22 +50,22 @@
 
 
 ;--<System port A>--------------------------------------------------------------
-    .DEF    SYSTEM_PORT_A_SY0 =     $01
-    .DEF    SYSTEM_PORT_A_NSY0 =    $FE
-    .DEF    SYSTEM_PORT_A_SY2 =     $02
-    .DEF    SYSTEM_PORT_A_NSY2 =    $FD
-    .DEF    SYSTEM_PORT_A_SY3 =     $04
-    .DEF    SYSTEM_PORT_A_NSY3 =    $FB
-    .DEF    SYSTEM_PORT_A_SY4 =     $08
-    .DEF    SYSTEM_PORT_A_NSY4 =    $F7
-    .DEF    SYSTEM_PORT_A_SY5 =     $10
-    .DEF    SYSTEM_PORT_A_NSY5 =    $EF
-    .DEF    SYSTEM_PORT_A_SY6 =     $20
-    .DEF    SYSTEM_PORT_A_NSY6 =    $DF
-    .DEF    SYSTEM_PORT_A_MS0 =     $40
-    .DEF    SYSTEM_PORT_A_NMS0 =    $BF
-    .DEF    SYSTEM_PORT_A_MS1 =     $80
-    .DEF    SYSTEM_PORT_A_NMS1 =    $7F
+    .DEF    SYSTEM_PORT_A_SY0 =         $01
+    .DEF    SYSTEM_PORT_A_NSY0 =        $FE
+    .DEF    SYSTEM_PORT_A_SY2 =         $02
+    .DEF    SYSTEM_PORT_A_NSY2 =        $FD
+    .DEF    SYSTEM_PORT_A_SY3 =         $04
+    .DEF    SYSTEM_PORT_A_NSY3 =        $FB
+    .DEF    SYSTEM_PORT_A_SY4 =         $08
+    .DEF    SYSTEM_PORT_A_NSY4 =        $F7
+    .DEF    SYSTEM_PORT_A_SY5 =         $10
+    .DEF    SYSTEM_PORT_A_NSY5 =        $EF
+    .DEF    SYSTEM_PORT_A_SY6 =         $20
+    .DEF    SYSTEM_PORT_A_NSY6 =        $DF
+    .DEF    SYSTEM_PORT_A_MS0 =         $40
+    .DEF    SYSTEM_PORT_A_NMS0 =        $BF
+    .DEF    SYSTEM_PORT_A_MS1 =         $80
+    .DEF    SYSTEM_PORT_A_NMS1 =        $7F
 ;--<System port B>--------------------------------------------------------------
     .DEF    SYSTEM_PORT_B_MOSI =        $01
     .DEF    SYSTEM_PORT_B_NMOSI =       $FE
@@ -100,8 +100,12 @@
     .DEF    SYSTEM_PORT_C_NCONF =       $BF
     .DEF    SYSTEM_PORT_C_MISO =        $80
     .DEF    SYSTEM_PORT_C_NMISO =       $7F
-
-
+;--<Software SPI>---------------------------------------------------------------
+    .DEF    MOSI_PORT =                 SYSTEM_PORT_B
+    .DEF    SCK_PORT =                  SYSTEM_PORT_B
+    .DEF    MOSI_SCK_PORT =             SYSTEM_PORT_B
+    .DEF    MISO_PORT =                 SYSTEM_PORT_C
+    
 
 
 
